@@ -61,9 +61,14 @@ describe("CONTROLADOR DE AUTO TEST", () => {
     expect(libreria.GirarIzq(posicion)).toEqual({"direccion": "S", "i": 1, "j": 1});
   });
   //CONVERTIR POSICION
-  it("Deberia devolver un objeto {'direccion': 'N', 'i': 1, 'j': 2} de la funcion '1,2 N' procesar comandos", () => {
-    let posicion = "1,2 N"
+  it("Deberia devolver un objeto {'direccion': 'N', 'i': 1, 'j': 2} de la funcion '1,2 N' para convertirla en objeto", () => {
+    let posicion = "1,2 N";
     expect(libreria.ConvertirPosicion(posicion)).toEqual({"direccion": "N", "i": 1, "j": 2});
+  });
+  //CONVERTIR GRILLA
+  it("Deberia devolver un array [3,3] de la funcion '3,3' para convertirla", () => {
+    let grilla = "3,3";
+    expect(libreria.ConvertirGrilla(grilla)).toEqual([3,3]);
   });
 });
 
