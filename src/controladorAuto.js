@@ -1,4 +1,13 @@
 
+function ProcesarComandos(grilla, posicion, instrucciones) {
+  let grillaConvertida = ConvertirGrilla(grilla);
+  let posicionConvertida = ConvertirPosicion(posicion);
+  let dict = {"A":Avanzar(posicionConvertida,grillaConvertida), "I":GirarIzq(posicionConvertida), "D": GirarDer(posicionConvertida)};
+  for(let item of instrucciones){
+    posicionConvertida = dict[item];
+  }
+  return posicionConvertida;
+}
 function ConvertirGrilla(grilla) {
   return grilla.split(",").map(i => parseInt(i,10));
 }
@@ -56,5 +65,6 @@ module.exports = {
   GirarIzq,
   GirarDer,
   ConvertirGrilla,
-  ConvertirPosicion
+  ConvertirPosicion,
+  ProcesarComandos
 }

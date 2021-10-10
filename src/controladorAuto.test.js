@@ -70,5 +70,11 @@ describe("CONTROLADOR DE AUTO TEST", () => {
     let grilla = "3,3";
     expect(libreria.ConvertirGrilla(grilla)).toEqual([3,3]);
   });
+  it("Deberia devolver un array {'direccion': 'N', 'i': 1, 'j': 3} de la funcion ProcesarComandos(grilla,posicion,instrucciones)", () => {
+    let grilla = "5,5";
+    let posicion = "1,2 N";
+    let instrucciones = "IAIAIAIAA"
+    expect(libreria.ProcesarComandos(grilla,posicion,instrucciones)).toEqual({"direccion": "N", "i": 1, "j": 3});
+  });
 });
 
