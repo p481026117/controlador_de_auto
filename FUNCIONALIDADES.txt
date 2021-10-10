@@ -1,7 +1,8 @@
-Ingresar una cadena de caracteres
-Implementar funcion sumar con las validaciones "1,2,4,8" return 15
-Implementar funcion sumar con las validaciones "1-2-4,8" return 15
-Implementar delimitadores "[;]\n 6;7;4" return 15
-Implementar delimitadores de cadenas "[***]\n 1***2***3" returm 6
-Implementar delimitadores de cadenas multiples "[*][%]\n1*2%3,7-9" return 22
-Implementar ignorar numeros mayores a 1000
+Deberia capturar las instrucciones //IIAAAA ==> IIAAAA
+Deberia ser capaz de capturar la posicion inicial e instrucciones. /1,2 N/IIAAAA
+Deberia ser capaz de capturar el tamaño de la grilla, la posicion inicial e instrucciones. 5,5/1,2 N/IIAAAA
+
+
+Deberia devolver un Objeto posicion ingresada como parametros a la funcion. =>  1,2 N 
+==> {"direccion": "N", "i": 1, "j": 2}
+Ingresar 
