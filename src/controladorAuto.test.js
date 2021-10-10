@@ -60,5 +60,10 @@ describe("CONTROLADOR DE AUTO TEST", () => {
     let posicion = libreria.PositionInicial(1,1,"O");
     expect(libreria.GirarIzq(posicion)).toEqual({"direccion": "S", "i": 1, "j": 1});
   });
+  //CONVERTIR POSICION
+  it("Deberia devolver un objeto {'direccion': 'N', 'i': 1, 'j': 2} de la funcion '1,2 N' procesar comandos", () => {
+    let posicion = "1,2 N"
+    expect(libreria.ConvertirPosicion(posicion)).toEqual({"direccion": "N", "i": 1, "j": 2});
+  });
 });
 

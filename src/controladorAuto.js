@@ -1,21 +1,14 @@
-// function ControladorAuto(cadena) {
-//   let dividir = cadena.split("/");
-//   let grilla = dividir[0];
-//   let posicionInicial = dividir[1];
-//   let instrucciones = dividir[2];
-//   if(grilla === null && posicionInicial === null){
-//     let grillaDefault = "3,3";
-//     let posicionInicialDefault = "1,1 N";
-    
-//   }else if(grilla === null){
-//     let grillaDefault = "3,3";
-//   }else {
 
-//   }
-// }
-// function CadenaAProcesar(grilla, posicionInicial, instrucciones) {
-  
-// }
+function ConvertirGrilla(grilla) {
+  return grilla.split(",").map(i => parseInt(i,10));
+}
+function ConvertirPosicion(posicion) {
+  let posicionRemplazo = posicion.replace(" ", ",").split(",");
+  let x = posicionRemplazo[0];
+  let y = posicionRemplazo[1];
+  let Direccion = posicionRemplazo[2];
+  return new Posicion(parseInt(x,10), parseInt(y,10),Direccion);
+}
 function Avanzar(posicion, grilla) {
   let filas = grilla[0];
   let columnas = grilla[1];
@@ -61,5 +54,7 @@ module.exports = {
   PositionInicial,
   Avanzar,
   GirarIzq,
-  GirarDer
+  GirarDer,
+  ConvertirGrilla,
+  ConvertirPosicion
 }
