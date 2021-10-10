@@ -34,61 +34,15 @@ function Avanzar(posicion, grilla) {
   return posicion;
 }
 
-// function GirarIzq(posicion) {
-//   let direccionActualizada;
-//   if(posicion.direccion === "N"){
-//     direccionActualizada = "O";
-//   }
-//   if(posicion.direccion === "S"){
-//     direccionActualizada = "E";
-//   }
-//   if(posicion.direccion === "E"){
-//     direccionActualizada = "N";
-//   }
-//   if(posicion.direccion === "O"){
-//     direccionActualizada = "S";
-//   }
-//   posicion.direccion = direccionActualizada;
-//   return posicion;
-// }
 function GirarIzq(posicion) {
   let dict = {N:"O", S:"E", E:"N", O:"S"};
   posicion.direccion = dict[posicion.direccion];
   return posicion;
-
-  
-  // let direccionActualizada;
-  // if(posicion.direccion === "N"){
-  //   direccionActualizada = "O";
-  // }
-  // if(posicion.direccion === "S"){
-  //   direccionActualizada = "E";
-  // }
-  // if(posicion.direccion === "E"){
-  //   direccionActualizada = "N";
-  // }
-  // if(posicion.direccion === "O"){
-  //   direccionActualizada = "S";
-  // }
-  // posicion.direccion = direccionActualizada;
-  // return posicion;
 }
 
 function GirarDer(posicion) {
-  let direccionActualizada;
-  if(posicion.direccion === "N"){
-    direccionActualizada = "E";
-  }
-  if(posicion.direccion === "S"){
-    direccionActualizada = "O";
-  }
-  if(posicion.direccion === "E"){
-    direccionActualizada = "S";
-  }
-  if(posicion.direccion === "O"){
-    direccionActualizada = "N";
-  }
-  posicion.direccion = direccionActualizada;
+  let dict = {N:"E", S:"O", E:"S", O:"N"}
+  posicion.direccion = dict[posicion.direccion];
   return posicion;
 }
 
@@ -103,8 +57,6 @@ function PositionInicial(i,j,direccion) {
   let tmp = new Posicion(i,j,direccion);
   return tmp;
 }
-// var list = [1,2,3,4,5].filter(function(x){ return x < 4; })
-//                .map(function(x) { return 'foo ' + x; });
 module.exports = {
   PositionInicial,
   Avanzar,
