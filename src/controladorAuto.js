@@ -34,6 +34,46 @@ function Avanzar(posicion, grilla) {
   return posicion;
 }
 
+// function GirarIzq(posicion) {
+//   let direccionActualizada;
+//   if(posicion.direccion === "N"){
+//     direccionActualizada = "O";
+//   }
+//   if(posicion.direccion === "S"){
+//     direccionActualizada = "E";
+//   }
+//   if(posicion.direccion === "E"){
+//     direccionActualizada = "N";
+//   }
+//   if(posicion.direccion === "O"){
+//     direccionActualizada = "S";
+//   }
+//   posicion.direccion = direccionActualizada;
+//   return posicion;
+// }
+function GirarIzq(posicion) {
+  let dict = {N:"O", S:"E", E:"N", O:"S"};
+  posicion.direccion = dict[posicion.direccion];
+  return posicion;
+
+  
+  // let direccionActualizada;
+  // if(posicion.direccion === "N"){
+  //   direccionActualizada = "O";
+  // }
+  // if(posicion.direccion === "S"){
+  //   direccionActualizada = "E";
+  // }
+  // if(posicion.direccion === "E"){
+  //   direccionActualizada = "N";
+  // }
+  // if(posicion.direccion === "O"){
+  //   direccionActualizada = "S";
+  // }
+  // posicion.direccion = direccionActualizada;
+  // return posicion;
+}
+
 function GirarDer(posicion) {
   let direccionActualizada;
   if(posicion.direccion === "N"){
@@ -68,5 +108,6 @@ function PositionInicial(i,j,direccion) {
 module.exports = {
   PositionInicial,
   Avanzar,
+  GirarIzq,
   GirarDer
 }
