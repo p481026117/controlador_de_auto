@@ -75,9 +75,17 @@ function PositionInicial(i,j,direccion) {
   let tmp = new Posicion(i,j,direccion);
   return tmp;
 }
+function  CapurarTamañoGrilla(cadena) {
+  let dividir = cadena.split("/");
+  return dividir[0];
+}
 function CapturarPosicionInicial(cadena) {
   let dividir = cadena.split("/");
   return dividir[1];
+}
+function  CapurarInstrucciones(cadena) {
+  let dividir = cadena.split("/");
+  return dividir[2];
 }
 module.exports = {
   PositionInicial,
@@ -85,6 +93,8 @@ module.exports = {
   GirarIzq,
   GirarDer,
   CapturarPosicionInicial,
+  CapurarTamañoGrilla,
+  CapurarInstrucciones,
   ConvertirGrilla,
   ConvertirPosicion,
   ProcesarComandos,
