@@ -2,7 +2,7 @@ import libreria, { GenerarMatriz } from './controladorAuto.js';
 
 describe("CONTROLADOR DE AUTO TEST", () => {
 
-  it("Deberia devolver un Objeto posicion ingresada como parametros a la funcion.", () => {
+  it("Deberia devolver un Objeto {'direccion': 'N', 'i': 1, 'j': 2} con posicion ingresada como parametros a la funcion.", () => {
     expect(libreria.PositionInicial(1,2,"N")).toEqual({"direccion": "N", "i": 1, "j": 2});
   });
   //AVANZAR
@@ -52,11 +52,11 @@ describe("CONTROLADOR DE AUTO TEST", () => {
     let posicion = libreria.PositionInicial(1,1,"S");
     expect(libreria.GirarIzq(posicion)).toEqual({"direccion": "E", "i": 1, "j": 1});
   });
-  it("Deberia devolver un objeto {'direccion': 'N', 'i': 1, 'j': 1} de la funcion (1,1,'E') Girar hacia la derecha", () => {
+  it("Deberia devolver un objeto {'direccion': 'N', 'i': 1, 'j': 1} de la funcion (1,1,'E') Girar hacia la izquierda", () => {
     let posicion = libreria.PositionInicial(1,1,"E");
     expect(libreria.GirarIzq(posicion)).toEqual({"direccion": "N", "i": 1, "j": 1});
   });
-  it("Deberia devolver un objeto {'direccion': 'S', 'i': 1, 'j': 1} de la funcion (1,1,'O') Girar hacia la derecha", () => {
+  it("Deberia devolver un objeto {'direccion': 'S', 'i': 1, 'j': 1} de la funcion (1,1,'O') Girar hacia la izquierda", () => {
     let posicion = libreria.PositionInicial(1,1,"O");
     expect(libreria.GirarIzq(posicion)).toEqual({"direccion": "S", "i": 1, "j": 1});
   });
@@ -66,15 +66,21 @@ describe("CONTROLADOR DE AUTO TEST", () => {
     expect(libreria.ConvertirPosicion(posicion)).toEqual({"direccion": "N", "i": 1, "j": 2});
   });
   //CONVERTIR GRILLA
-  it("Deberia devolver un array [3,3] de la funcion '3,3' para convertirla", () => {
+  it("Deberia devolver un array [3,3] de la funcion '3,3' convertida", () => {
     let grilla = "3,3";
     expect(libreria.ConvertirGrilla(grilla)).toEqual([3,3]);
   });
-  it("Deberia devolver un array {'direccion': 'N', 'i': 1, 'j': 3} de la funcion ProcesarComandos(grilla,posicion,instrucciones)", () => {
+  it("Deberia devolver un objeto {'direccion': 'N', 'i': 1, 'j': 3} de la funcion ProcesarComandos(grilla,posicion,instrucciones)", () => {
     let grilla = "5,5";
     let posicion = "1,2 N";
     let instrucciones = "IAIAIAIAA"
     expect(libreria.ProcesarComandos(grilla,posicion,instrucciones)).toEqual({"direccion": "N", "i": 1, "j": 3});
+  });
+  it("Deberia devolver un array '1,3 N' de la funcion ControladorAuto('5,5/1,2 N/IAIAIAIAA')", () => {
+    expect(libreria.ControladorAuto("5,5/1,2 N/IAIAIAIAA")).toEqual("1,3 N");
+  });
+  it("Deberia devolver un array '5,1 E' de la funcion ControladorAuto('5,5/3,3 E/AADAADADDA')", () => {
+    expect(libreria.ControladorAuto("5,5/3,3 E/AADAADADDA")).toEqual("5,1 E");
   });
 });
 
