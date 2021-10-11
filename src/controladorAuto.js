@@ -13,7 +13,6 @@ function ProcesarComandos(grilla, posicion, instrucciones) {
   let posicionConvertida = ConvertirPosicion(posicion);
   for(let item of instrucciones){
     posicionConvertida = SeleccionarInstruccion(item,grillaConvertida,posicionConvertida);
-    console.log([posicionConvertida.i, posicionConvertida.j, posicionConvertida.direccion]);
   }
   return posicionConvertida;
 }
@@ -76,11 +75,16 @@ function PositionInicial(i,j,direccion) {
   let tmp = new Posicion(i,j,direccion);
   return tmp;
 }
+function CapturarPosicionInicial(cadena) {
+  let dividir = cadena.split("/");
+  return dividir[1];
+}
 module.exports = {
   PositionInicial,
   Avanzar,
   GirarIzq,
   GirarDer,
+  CapturarPosicionInicial,
   ConvertirGrilla,
   ConvertirPosicion,
   ProcesarComandos,

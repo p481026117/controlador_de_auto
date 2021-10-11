@@ -1,15 +1,17 @@
-import sumar from "./App";
+import libreria, { GenerarMatriz } from './controladorAuto.js';
 
-const first = document.querySelector("#first-number");
-const second = document.querySelector("#second-number");
-const form = document.querySelector("#sumar-form");
+const comandos = document.querySelector("#comandos-input");
+const form = document.querySelector("#controladorAuto-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  var posicionInicial = libreria.CapturarPosicionInicial(comandos.value);
+  var comandosIngresados = comandos.value;
+  var posicionFinal = libreria.ControladorAuto(comandos.value);
+  
+  div.innerHTML = "<label>POSICION INICIAL ==> </label>" + posicionInicial + "<br>" + 
+                  "<label>COMANDOS INGRESADOS ==> </label>" + comandosIngresados + "<br>" + 
+                  "<label>POSICION FINAL ==> </label>" + posicionFinal;
 });
