@@ -33,7 +33,7 @@ Como Persona interesada en el producto
 Quiero verificar si el auto respeta con los limites de la grilla
 Para poder ver si el la funcion cumple correctamente con la semantica propuesta
     Criterios de confirmación:
-      --Deberia devolver "1,3 N". Del comando "5,5/3,3 E/AAAAAAAA"
+      --Deberia devolver "5,3 E". Del comando "5,5/3,3 E/AAAAAAAA"
 
 Como Persona interesada en el producto
 Quiero verificar comandos complejos 

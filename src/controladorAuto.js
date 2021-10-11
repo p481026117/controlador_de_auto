@@ -26,10 +26,10 @@ function SeleccionarInstruccion(item, grilla, posicion) {
       return GirarDer(posicion);
   }
 }
-function ConvertirGrilla(grilla) {
+function ConvertirGrilla(grilla) { //DEVUELVE UN ARRAY DE ENTEROS[n,m]
   return grilla.split(",").map(i => parseInt(i,10));
 }
-function ConvertirPosicion(posicion) {
+function ConvertirPosicion(posicion) { //DEVUELVE UN OBJETO DE TIPO POSICION
   let posicionRemplazo = posicion.replace(" ", ",").split(",");
   let x = parseInt(posicionRemplazo[0],10);
   let y = parseInt(posicionRemplazo[1],10);
